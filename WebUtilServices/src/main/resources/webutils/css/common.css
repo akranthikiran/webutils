@@ -1,0 +1,64 @@
+.formRegion
+{
+	background-color: rgba(0,0,255,0.5);
+}
+
+.searchBorder
+{
+	margin-top: 1em;
+	margin-left: 0.4em;
+	margin-right: 0.4em;
+}
+
+.iconLink
+{
+	font-size: 1.5em;
+	text-decoration: none;
+	margin: 3px 6px !important;
+}
+
+.searchField
+{
+	display: inline-block;
+	white-space: nowrap;
+	margin-bottom: 10px; 
+}
+
+legend 
+{
+	margin-left: 0.5em;	
+}
+
+.messageStyle
+{
+	font-family: Lucida Grande,Lucida Sans,Arial,sans-serif;
+	font-size: 0.8em;
+	font-weight: bold;
+}
+
+
+.linkButton
+{
+	border: 1px solid #c5dbec;
+	background: gray;
+	padding: 0.3em;
+	font-family: Lucida Grande,Lucida Sans,Arial,sans-serif;
+	font-size: 0.9em;
+	font-weight: bold;
+	cursor: pointer;
+	padding: 0.2em 1em;
+}
+
+.confirm_yes_button 
+{
+	background: green !important;
+	color: white !important;
+	font-weight: bold;	
+}
+
+.confirm_no_button 
+{
+	background: red !important;
+	color: white !important;
+	font-weight: bold;	
+}

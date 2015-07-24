@@ -1,0 +1,28 @@
+<resolver-configuration>
+	<resolver type="javax.validation.constraints.Min" targetType="java.lang.String" name="minLength" valueAttrs="value"/>
+	<resolver type="javax.validation.constraints.Max" targetType="java.lang.String" name="maxLength" valueAttrs="value"/>
+	<resolver type="javax.validation.constraints.Pattern" targetType="java.lang.String" name="pattern" valueAttrs="regexp"/>
+	
+	<resolver type="com.fw.webutil.common.validator.annotations.Mispattern" targetType="java.lang.String" name="mispattern" valueAttrs="regexp"/>
+	<resolver type="com.fw.webutil.common.validator.annotations.MatchWith" targetType="java.lang.String" name="matchWith" valueAttrs="field"/>
+
+	<resolver type="com.fw.webutil.common.validator.annotations.MatchWith" targetType="java.lang.String" name="matchWith" valueAttrs="field"/>
+
+	<resolver type="com.fw.webutil.common.validator.annotations.NotEmpty" targetType="java.lang.String" name="required"/>
+	<resolver type="com.fw.webutil.common.validator.annotations.NotEmpty" targetType="java.util.Collection" name="required"/>
+	
+	<resolver type="com.fw.webutil.common.validator.annotations.Required" targetType="java.lang.Object" name="required"/>
+	<resolver type="com.fw.webutil.common.validator.annotations.MandatoryOption" targetType="java.lang.Object" name="mandatoryOption" valueAttrs="fields"/>
+	
+	<resolver type="com.fw.webutil.common.validator.annotations.ThisYearOnly" targetType="java.util.Date" name="thisYearOnly"/>
+	<resolver type="com.fw.webutil.common.validator.annotations.FutureOrToday" targetType="java.util.Date" name="futureOrToday"/>
+	<resolver type="com.fw.webutil.common.validator.annotations.PastOrToday" targetType="java.util.Date" name="pastOrToday"/>
+	<resolver type="com.fw.webutil.common.validator.annotations.GreaterThan" targetType="java.util.Date" name="greaterThanDateField" valueAttrs="field"/>
+
+	<resolver type="javax.validation.constraints.Min" targetType="java.lang.Number" name="minValue" valueAttrs="value"/>
+	<resolver type="javax.validation.constraints.Max" targetType="java.lang.Number" name="maxValue" valueAttrs="value"/>
+	<resolver type="com.fw.webutil.common.validator.annotations.LessThan" targetType="java.lang.Number" name="lessThan" valueAttrs="field"/>
+	<resolver type="com.fw.webutil.common.validator.annotations.LessThanEquals" targetType="java.lang.Number" name="lessThanEquals" valueAttrs="field"/>
+	<resolver type="com.fw.webutil.common.validator.annotations.GreaterThan" targetType="java.lang.Number" name="greaterThan" valueAttrs="field"/>
+	<resolver type="com.fw.webutil.common.validator.annotations.GreaterThanEquals" targetType="java.lang.Number" name="greaterThanEquals" valueAttrs="field"/>
+</resolver-configuration>
