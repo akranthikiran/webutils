@@ -17,7 +17,7 @@ import com.fw.webutil.common.validator.FutureOrTodayValidator;
 @Retention(RetentionPolicy.RUNTIME)
 public @interface FutureOrToday
 {
-	public String message() default "{FutureOrToday}";
+	public String message() default "{com.fw.webutil.common.validator.annotations.FutureOrToday}";
 
 	public Class<?>[] groups() default {};
 

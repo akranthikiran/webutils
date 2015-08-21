@@ -17,7 +17,7 @@ import com.fw.webutil.common.validator.ThisYearOnlyValidator;
 @Retention(RetentionPolicy.RUNTIME)
 public @interface ThisYearOnly
 {
-	public String message() default "{ThisYearOnly}";
+	public String message() default "{com.fw.webutil.common.validator.annotations.ThisYearOnly}";
 
 	public Class<?>[] groups() default {};
 

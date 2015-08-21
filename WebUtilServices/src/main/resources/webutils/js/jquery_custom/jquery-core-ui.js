@@ -193,8 +193,12 @@ $.displayModelForm = function(modelTypeName, callBack, modelToUpdate, configurat
 				mssg = callBack(model, modelToUpdate);
 			}catch(ex)
 			{
+				var msg = "" + ex;
+				//replace new lines with breaks, so that in ui it is rendered properly
+				msg = msg.replace(/\n/g, "<BR/>");
+				
 				$.error("Please correct below errors and try!" +
-						'<BR/>Error: ' + ex); 
+						'<BR/>Error: ' + msg); 
 				return;
 			}
 		}

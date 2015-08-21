@@ -228,7 +228,7 @@ function TemplateEngine()
 		
 		for(var t = 0; t < templatesUrls.length; t++)
 		{
-			templatesParent = makeJsonCall(templatesUrls[t], null, {cache: false, dataType: "xml"});
+			templatesParent = makeJsonCall(templatesUrls[t], null, {cache: false, dataType: "xml", "methodType": "GET"});
 			templatesParent = templatesParent.documentElement;
 			children = templatesParent.children;
 			

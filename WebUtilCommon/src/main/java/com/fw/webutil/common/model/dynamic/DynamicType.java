@@ -7,8 +7,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
 import javax.validation.constraints.Pattern;
 
 import org.apache.commons.lang3.SerializationUtils;
@@ -18,6 +16,8 @@ import com.fw.webutil.common.annotations.Model;
 import com.fw.webutil.common.annotations.MultilineText;
 import com.fw.webutil.common.annotations.ReadOnly;
 import com.fw.webutil.common.annotations.ServerField;
+import com.fw.webutil.common.validator.annotations.MaxLen;
+import com.fw.webutil.common.validator.annotations.MinLen;
 import com.fw.webutil.common.validator.annotations.NotEmpty;
 import com.fw.webutil.common.validator.annotations.Required;
 
@@ -30,17 +30,17 @@ public class DynamicType implements IIdentifiable, Cloneable, Serializable
 	private String id;
 
 	@Required
-	@Min(3)
-	@Max(30)
+	@MinLen(3)
+	@MaxLen(30)
 	@Pattern(regexp = "[\\w ]+")
 	private String name;
 
 	@Required
-	@Min(3)
-	@Max(30)
+	@MinLen(3)
+	@MaxLen(30)
 	private String label;
 
-	@Max(500)
+	@MaxLen(500)
 	@MultilineText
 	private String description;
 

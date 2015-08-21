@@ -19,7 +19,7 @@ public @interface GreaterThanEquals
 {
 	public String field();
 	
-	public String message() default "{GreaterThanEquals}";
+	public String message() default "{com.fw.webutil.common.validator.annotations.GreaterThanEquals}";
 
 	public Class<?>[] groups() default {};
 

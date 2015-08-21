@@ -1,6 +1,6 @@
 <resolver-configuration>
-	<resolver type="javax.validation.constraints.Min" targetType="java.lang.String" name="minLength" valueAttrs="value"/>
-	<resolver type="javax.validation.constraints.Max" targetType="java.lang.String" name="maxLength" valueAttrs="value"/>
+	<resolver type="com.fw.webutil.common.validator.annotations.MinLen" targetType="java.lang.String" name="minLength" valueAttrs="value"/>
+	<resolver type="com.fw.webutil.common.validator.annotations.MaxLen" targetType="java.lang.String" name="maxLength" valueAttrs="value"/>
 	<resolver type="javax.validation.constraints.Pattern" targetType="java.lang.String" name="pattern" valueAttrs="regexp"/>
 	
 	<resolver type="com.fw.webutil.common.validator.annotations.Mispattern" targetType="java.lang.String" name="mispattern" valueAttrs="regexp"/>

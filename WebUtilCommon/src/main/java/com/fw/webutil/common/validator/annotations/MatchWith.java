@@ -19,7 +19,7 @@ public @interface MatchWith
 {
 	public String field();
 	
-	public String message() default "{MatchWith}";
+	public String message() default "{com.fw.webutil.common.validator.annotations.MatchWith}";
 
 	public Class<?>[] groups() default {};
 

@@ -22,7 +22,7 @@ public class BoxLimitValidator implements ConstraintValidator<BoxLimit, String>
 	{
 		if(value == null)
 		{
-			return false;
+			return true;
 		}
 
 		String lines[] = value.toString().split("\\n");

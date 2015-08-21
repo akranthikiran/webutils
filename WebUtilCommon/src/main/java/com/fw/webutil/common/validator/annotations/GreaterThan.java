@@ -19,7 +19,7 @@ public @interface GreaterThan
 {
 	public String field();
 	
-	public String message() default "{GreaterThan}";
+	public String message() default "{com.fw.webutil.common.validator.annotations.GreaterThan}";
 
 	public Class<?>[] groups() default {};
 

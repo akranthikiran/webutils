@@ -7,8 +7,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
 import javax.validation.constraints.Pattern;
 
 import com.fw.webutil.common.FlagUtil;
@@ -22,6 +20,8 @@ import com.fw.webutil.common.annotations.MultilineText;
 import com.fw.webutil.common.annotations.ReadOnly;
 import com.fw.webutil.common.annotations.ServerField;
 import com.fw.webutil.common.annotations.Transient;
+import com.fw.webutil.common.validator.annotations.MaxLen;
+import com.fw.webutil.common.validator.annotations.MinLen;
 import com.fw.webutil.common.validator.annotations.Required;
 
 @Model
@@ -43,18 +43,18 @@ public class FieldDef implements IIdentifiable, Serializable
 	private String parentId;
 	
 	@Required
-	@Min(3)
-	@Max(30)
+	@MinLen(3)
+	@MaxLen(30)
 	@Pattern(regexp = "\\w+", message = "Name can contain only alpha-numeric characters (spaces are not allowed)")
 	private String name;
 	
 	@Required
-	@Min(3)
-	@Max(30)
+	@MinLen(3)
+	@MaxLen(30)
 	@Pattern(regexp = "\\w[\\w\\ \\-]+\\w", message = "Label can contain only alpha-numeric characters with optional spaces or hyphen (-) in between")
 	private String label;
 	
-	@Max(50)
+	@MaxLen(50)
 	@MultilineText
 	private String description;
 	
@@ -70,8 +70,8 @@ public class FieldDef implements IIdentifiable, Serializable
 	
 	//TODO: yet to be implemented. This should be made into system lov
 	@ServerField
-	@Min(3)
-	@Max(30)
+	@MinLen(3)
+	@MaxLen(30)
 	private String groupName;
 
 	//TODO: This is yet to be implemented, and needs to be checked if its needed

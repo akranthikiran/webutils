@@ -1,6 +1,7 @@
 package com.fw.webutil.controller;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.ValidationException;
@@ -8,6 +9,9 @@ import javax.validation.ValidationException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.FieldError;
+import org.springframework.validation.ObjectError;
+import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -85,6 +89,45 @@ public class BaseController
 		return new GenericResponse(IResponseCodes.VALIDATION_ERROR, null, invalidParameterException.getMessage());
 	}
 
+	/**
+	 * Handler for MethodArgumentNotValidException. This exception is expected to be thrown
+	 * by spring when request object fails server side validations.
+	 * @param response
+	 * @param ex
+	 * @return
+	 */
+	@ExceptionHandler(value={MethodArgumentNotValidException.class})
+	@ResponseBody
+	public GenericResponse handleParamValidationException(HttpServletResponse response, Exception ex)
+	{
+		MethodArgumentNotValidException validateEx = (MethodArgumentNotValidException)ex;
+
+		logger.debug("Encountered param-validation exception - " + ex);
+		
+		//Compute the error message
+		List<ObjectError> errors = validateEx.getBindingResult().getAllErrors();
+		
+		StringBuilder responseMsg = new StringBuilder();
+		FieldError fldError = null;
+		
+		for(ObjectError error: errors)
+		{
+			if(error instanceof FieldError)
+			{
+				fldError = (FieldError)error;
+				responseMsg.append( String.format("Field '%s'. Error - %s", fldError.getField(), fldError.getDefaultMessage()) ).append("\n");
+			}
+			else
+			{
+				responseMsg.append( error.getDefaultMessage() ).append("\n");
+			}
+		}
+		
+		response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+		
+		return new GenericResponse(IResponseCodes.VALIDATION_ERROR, null, "Validation Error: " + responseMsg);
+	}
+	
 	@ExceptionHandler(value={Exception.class})
 	@ResponseBody
 	public GenericResponse handleException(HttpServletResponse response, Exception ex)

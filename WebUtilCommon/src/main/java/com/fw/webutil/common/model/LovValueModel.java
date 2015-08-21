@@ -1,11 +1,11 @@
 package com.fw.webutil.common.model;
 
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
 import javax.validation.constraints.Pattern;
 
 import com.fw.webutil.common.annotations.Model;
 import com.fw.webutil.common.annotations.ReadOnly;
+import com.fw.webutil.common.validator.annotations.MaxLen;
+import com.fw.webutil.common.validator.annotations.MinLen;
 import com.fw.webutil.common.validator.annotations.Required;
 
 @Model
@@ -18,14 +18,14 @@ public class LovValueModel
 	private String parentLovId;
 	
 	@Required
-	@Min(3)
+	@MinLen(3)
 	@Pattern(regexp="\\w[\\w\\s]+\\w", message = "Name can contain aplha-numeric characters with optional spaces in middle")
 	private String name;
 
 	private String description;
 	
 	@Required
-	@Max(50)
+	@MaxLen(50)
 	private String value;
 	
 	public LovValueModel()

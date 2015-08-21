@@ -19,7 +19,7 @@ public @interface LessThan
 {
 	public String field();
 	
-	public String message() default "{LessThan}";
+	public String message() default "{com.fw.webutil.common.validator.annotations.LessThan}";
 
 	public Class<?>[] groups() default {};
 

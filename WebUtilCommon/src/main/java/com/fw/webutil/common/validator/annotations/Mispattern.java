@@ -19,7 +19,7 @@ public @interface Mispattern
 {
 	public String regexp();
 	
-	public String message() default "{Mispattern}";
+	public String message() default "{com.fw.webutil.common.validator.annotations.Mispattern}";
 
 	public Class<?>[] groups() default {};
 

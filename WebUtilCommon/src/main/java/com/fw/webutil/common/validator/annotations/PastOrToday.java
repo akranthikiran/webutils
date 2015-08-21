@@ -17,7 +17,7 @@ import com.fw.webutil.common.validator.PastOrTodayValidator;
 @Retention(RetentionPolicy.RUNTIME)
 public @interface PastOrToday
 {
-	public String message() default "{PastOrToday}";
+	public String message() default "{com.fw.webutil.common.validator.annotations.PastOrToday}";
 
 	public Class<?>[] groups() default {};
 

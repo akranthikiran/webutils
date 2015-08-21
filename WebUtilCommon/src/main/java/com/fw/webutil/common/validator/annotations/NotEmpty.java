@@ -17,7 +17,7 @@ import com.fw.webutil.common.validator.NotEmptyValidator;
 @Retention(RetentionPolicy.RUNTIME)
 public @interface NotEmpty
 {
-	public String message() default "{NotEmpty}";
+	public String message() default "{com.fw.webutil.common.validator.annotations.NotEmpty}";
 
 	public Class<?>[] groups() default {};
 
